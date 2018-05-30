@@ -1,0 +1,444 @@
+@charset "utf-8";
+
+html {
+  font-size: 62.5%;
+}
+
+@mixin fontsize($size: 24, $base: 10) {
+  font-size: $size + px;
+  font-size: ($size / $base) * 1rem;
+}
+
+$ja_font :  "Kokoro", "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", メイリオ, Verdana, "ＭＳ Ｐゴシック", sans-serif;
+$basecolor :#ffffff;
+$green : #6bb247;
+$black : #000000;
+
+body{
+    font-family:  "Kokoro";
+}
+
+header{
+        margin: 20px 0;
+    }
+
+@media(max-width: 550px){
+    
+    #navi{
+        float:right;
+    }
+    
+    #logo{
+        width: 80%;
+        margin-right: 10px;
+    }
+    
+    #navi{
+        width: 15%;
+        text-align:right;
+    }
+    
+    #pc_navi{
+        display:none;
+    }
+    
+    #sp_navi{
+        position:relative;
+        
+    #sp_navi_li{
+           display:none;
+           list-style:none;
+           width: 120px;
+           text-align:left;
+           position:absolute;
+           top: 50px;
+           right: 2%;
+           z-index: 100;
+           background-color:$basecolor;
+           
+           a{
+               text-decoration:none;
+               color:$green;
+               @include fontsize(18);
+           }
+        }
+    }
+}
+
+@media(min-width: 551px){
+    
+    #logo{
+        margin-top: 5px;
+    }
+    
+    #sp_navi{
+        display:none;
+    }
+    
+    #pc_navi{
+        float:right;
+        margin-top: 5px;
+        
+        li{
+         list-style:none;
+         float:left;
+         margin-left: 20px;
+         
+         
+         a{
+          text-decoration:none;
+          color:$black;
+          @include fontsize(18);
+         } 
+          
+        }
+    }
+}
+
+// header
+
+
+#cover{
+    
+    
+    
+    background-image: url("../images/top/cover_top.png");
+    background-repeat:no-repeat;
+    background-size:cover;
+    
+    @media screen and (-webkit-min-device-pixel-ration:2),
+                      (min-resolution: 2dppx){
+
+    background-image: url("../images/top/cover_top@2x.png");
+                      }
+                      
+    h1{
+        color:$black;
+    }                  
+                      
+                      
+}
+
+@media(max-width: 550px){
+    
+    #cover{
+        height: 250px;
+    }
+    
+    h1{
+        letter-spacing: -3px;
+        @include fontsize(24);
+        margin-top: 150px;
+    }
+}
+
+@media(min-width: 551px){
+    
+    #cover{
+        height: 500px;
+    }
+    
+    h1{
+        letter-spacing: -8px;
+        @include fontsize(48);
+        margin-top: 350px;
+        font-weight:bold;
+    }
+}
+
+// cover
+
+#content{
+    text-align:center;
+    margin: 70px 0;
+    p{
+        text-align:left;
+        padding: 20px 0 100px 0;
+    }
+    
+    
+@media(max-width: 550px){
+    img{
+        width: 100%;
+    }
+}    
+    
+@media(min-width: 551px){
+    @include fontsize(18);
+    
+}    
+    
+}
+
+// content
+
+footer{
+    background-color:$green;
+    color:$basecolor;
+    
+    #footer_in{
+        padding-top: 40px;
+        padding-bottom: 20px;
+    }
+    
+    #page_top{
+        text-align:center;
+        
+    }
+        a{
+            color:$basecolor;
+            text-decoration:none;
+        }
+    
+    
+@media(max-width: 550px){
+    h2{
+        @include fontsize(24);
+    }
+    
+    p{
+        @include fontsize(16);
+    }
+  }
+  
+@media(min-width: 551px){
+    h2{
+        @include fontsize(30);
+    }
+    
+    #page_top{
+        text-align:right;
+        padding-top: 70px;
+    }
+} 
+  
+}
+
+// index.html ここまで
+// ここからinfo.html
+
+#cover_info{
+    text-align:center;
+    
+    
+    background-image: url("../images/info/info_top.png");
+    background-repeat:no-repeat;
+    background-size:cover;
+    
+    @media screen and (-webkit-min-device-pixel-ration:2),
+                      (min-resolution: 2dppx){
+
+    background-image: url("../images/top/info_top@2x.png");
+                      }
+}
+
+   h3{
+        color:$basecolor;
+        letter-spacing: 1px;
+        
+   }
+
+@media(max-width: 550px){
+    
+    #cover_info{
+        height: 140px;
+    }
+    
+    h3{
+        @include fontsize(20);
+        padding-top: 60px;
+    }
+}
+
+@media(min-width: 551px){
+    
+    #cover_info{
+        height: 250px;
+        
+    }
+    
+    h3{
+        @include fontsize(46);
+        padding-top: 100px;
+    }
+}
+
+#content_info, #content_access{
+    margin: 70px 0;
+    
+    img{
+        width: 100%;
+        height: 100%;
+    }
+    
+    h4{
+        text-align:left;
+        margin-bottom: 30px;
+        padding-bottom: 20px;
+        border-bottom: 2px solid $green;
+    }
+    
+    p{
+       margin: 20px 0 150px 0;
+        text-align:left;
+    }
+    
+@media(min-width: 551px){
+      
+      margin: 150px 0;
+
+    p{
+        @include fontsize(18);
+        
+    }
+    
+    #title_sub02{
+        padding-top: 100px;
+    }
+}    
+}
+
+// ここまでinfo.html
+// ここからfruit.html
+
+#cover_fruit{
+    text-align:center;
+    
+    background-image: url("../images/fruit/fruit_top.png");
+    background-repeat:no-repeat;
+    background-size:cover;
+    
+    @media screen and (-webkit-min-device-pixel-ration:2),
+                      (min-resolution: 2dppx){
+
+    background-image: url("../images/fruit/fruit_top@2x.png");
+                      }
+}
+
+#content_fruit{
+    margin: 150px 0 50px 0;
+    text-align:center;
+    
+    span{
+        @include fontsize(16);
+    }
+    
+    img{
+        width: 100%;
+    }
+    
+   #sentence01, #sentence02, #sentence03{
+       padding-bottom: 150px;
+    p{
+        text-align:left;
+    }
+    
+    .p1{
+        padding-bottom: 20px;
+        border-bottom: 2px solid $green;
+    }
+    
+   }
+}
+@media(max-width: 550px){
+    
+    #cover_fruit{
+        height: 140px;
+    }
+    
+    h3{
+        @include fontsize(34);
+        letter-spacing: 3px;
+        padding-top: 60px;
+    }
+    
+    #sentence, #sentence02, #sentence03{
+        .p1, .p2{
+            padding-top: 30px;
+            
+        }
+    }
+}
+
+@media(min-width: 551px){
+    
+    #cover_fruit{
+        height: 250px;
+        
+    }
+    
+    h3{
+        @include fontsize(52);
+        letter-spacing: 5px;
+        padding-top: 100px;
+    }
+    
+    #content_fruit{
+        margin: 20px 0 150px 0;
+     h4{
+        padding: 130px 0 20px 0;
+     }
+    }
+}
+
+// ここまでfruit.html
+// ここからaccess.html
+
+#cover_access{
+    text-align:center;
+    
+    background-image: url("../images/access/access_top.png");
+    background-repeat:no-repeat;
+    background-size:cover;
+    
+    @media screen and (-webkit-min-device-pixel-ration:2),
+                      (min-resolution: 2dppx){
+
+    background-image: url("../images/access/access_top@2x.png");
+                      }
+                      
+        h3{
+        @include fontsize(32);
+        letter-spacing: 3px;
+        padding-top: 45px;
+        }
+}
+
+#content_access{
+    #pa{
+        margin-bottom: 20px;
+    }
+}
+
+@media(max-width: 550px){
+    #cover_access{
+        height: 140px;
+    }
+    
+    #content_access{
+        #title_access02{
+            padding-top: 150px;
+        }
+    }
+}
+
+@media(min-width: 551px){
+    #cover_access{
+       height: 250px;
+       
+       h3{
+           @include fontsize(48);
+           padding-top: 100px;
+       }
+    }
+    
+    #content_access{
+        #title_access02{
+            padding-top: 200px;
+        }
+    }
+}
+
+    
+
+                      
